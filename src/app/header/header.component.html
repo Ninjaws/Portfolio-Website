@@ -1,18 +1,12 @@
 <header class="bg-gray-800 text-white py-6 relative">
   <div class="container mx-auto px-4">
     <div class="flex justify-between items-center">
-      <!-- Logo -->
       <div class="text-2xl font-bold">Ian Vink</div>
 
-      <!-- Navbar for larger screens -->
       <nav class="hidden md:flex space-x-6">
-        <a href="#about" class="hover:text-gray-400">About</a>
-        <a href="#skills" class="hover:text-gray-400">Skills</a>
-        <a href="#projects" class="hover:text-gray-400">Projects</a>
-        <a href="#contact" class="hover:text-gray-400">Contact</a>
+        <a *ngFor="let menuItem of menuItems" href="{{menuItem.href}}" class="hover:text-gray-400">{{menuItem.name}}</a>
       </nav>
 
-      <!-- Mobile Menu Button -->
       <div class="md:hidden">
         <button (click)="toggleMenu()" class="text-white focus:outline-none">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -22,12 +16,8 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div *ngIf="isMenuOpen" class="absolute top-full left-0 w-full bg-gray-800 text-white space-y-4 p-6 z-50">
       <a *ngFor="let menuItem of menuItems" href="{{menuItem.href}}" class="block hover:text-gray-400" (click)="closeMenu()">{{menuItem.name}}</a>
-      <!-- <a href="#skills" class="block hover:text-gray-400">Skills</a> -->
-      <!-- <a href="#projects" class="block hover:text-gray-400">Projects</a> -->
-      <!-- <a href="#contact" class="block hover:text-gray-400">Contact</a> -->
     </div>
   </div>
 </header>

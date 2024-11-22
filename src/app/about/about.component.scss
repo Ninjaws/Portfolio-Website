@@ -1,0 +1,11 @@
+$distance: 15.5rem;
+
+h2:before {
+    display:none;
+    left: -$distance;
+}
+
+h2:after {
+    display:none;
+    left: $distance;
+}

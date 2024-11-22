@@ -1,9 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
-
 @use "tailwindcss/base";
 @use "tailwindcss/components";
 @use "tailwindcss/utilities";
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+/** Orange wings shown on each h2 element */
+h2:before, h2:after {
+  content: "";
+  width: 4rem;
+  height: 2px;
+  background: #ea5f00;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(-50%);
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
   }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.fade-in-up {
+  opacity: 0;
+}
+.fade-in-up-ani {
+  animation: fadeInUp 0.95s ease-out;
+}
+
+@keyframes fadeInLeft {
+  0% {
+      opacity: 0;
+      transform:translateX(20px);
+  }
+
+  100% {
+      opacity: 1;
+      transform:translateX(0);
+  }
+}
+.fade-in-left {
+  opacity: 0;
+}
+.fade-in-left-ani {
+  animation: fadeInLeft 0.95s ease-out;
+}
+

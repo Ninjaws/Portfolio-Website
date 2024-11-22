@@ -20,7 +20,7 @@ export class HeaderComponent {
   constructor() {
     this.menuItems.push({name:"About", href: "#about"});
     this.menuItems.push({name:"Skills", href: "#skills"});
-    this.menuItems.push({name:"Projects", href: "#projets"});
+    this.menuItems.push({name:"Projects", href: "#projects"});
     this.menuItems.push({name:"Contact", href: "#contact"});
   }
 

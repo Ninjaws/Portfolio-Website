@@ -1,85 +1,15 @@
-<!-- <section id="skills" class="py-20 bg-gray-100">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-semibold text-gray-800 mb-6">Skills</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-gray-700">Angular</h3>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-gray-700">JavaScript</h3>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-gray-700">Tailwind CSS</h3>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-gray-700">Node.js</h3>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-gray-700">Git & GitHub</h3>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-gray-700">TypeScript</h3>
-        </div>
+<section id="skills" class="py-16 bg-gray-900 text-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-semibold text-center mb-12 relative fade-in-left">Skills</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div *ngFor="let category of categories" class="flex flex-col items-center p-8 bg-gray-800 rounded-lg shadow-lg fade-in-up">
+        <h3 class="text-3xl font-semibold mb-4 text-center text-teal-400">{{category.title}}</h3>
+        <ul class="list-none space-y-2 text-center">
+          <li *ngFor="let skill of category.skills">{{skill}}</li>
+        </ul>
       </div>
     </div>
-  </section> -->
-
-
-  <section id="skills" class="py-16 bg-gray-900 text-white">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-semibold text-center mb-12 relative">Skills</h2>
-  
-      <!-- Grid container for Frontend, Backend, DevOps -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-  
-        <!-- Frontend -->
-        <div class="flex flex-col items-center p-8 bg-gray-800 rounded-lg shadow-lg">
-          <h3 class="text-3xl font-semibold mb-4 text-center text-teal-400">Frontend</h3>
-          <ul class="list-none space-y-2 text-center">
-            <li>Angular</li>
-            <li>Typescript</li>
-            <li>Javascript</li>
-            <li>CSS</li>
-            <li>HTML</li>
-            <li>Tailwind</li>
-            <li>SASS (SCSS)</li>
-            <li>RxJS</li>
-            <li>Playwright</li>
-          </ul>
-        </div>
-  
-        <!-- Backend -->
-        <div class="flex flex-col items-center p-8 bg-gray-800 rounded-lg shadow-lg">
-          <h3 class="text-3xl font-semibold mb-4 text-center text-teal-400">Backend</h3>
-          <ul class="list-none space-y-2 text-center">
-            <li>Java</li>
-            <li>Spring Boot</li>
-            <li>JUnit</li>
-            <li>C#</li>
-            <li>ASP.NET Core</li>
-            <li>NestJS</li>
-            <li>SQL</li>
-            <li>PostgreSQL</li>
-            <li>MS SQLServer</li>
-          </ul>
-        </div>
-  
-        <!-- DevOps -->
-        <div class="flex flex-col items-center p-8 bg-gray-800 rounded-lg shadow-lg">
-          <h3 class="text-3xl font-semibold mb-4 text-center text-teal-400">DevOps</h3>
-          <ul class="list-none space-y-2 text-center">
-            <li>Docker</li>
-            <li>CI/CD</li>
-            <li>Jenkins</li>
-            <li>Bash</li>
-            <li>Git</li>
-            <li>Linux</li>
-            <li>GitHub</li>
-            <li>GitLab</li>
-            <li>Nginx</li>
-          </ul>
-        </div>
-  
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
