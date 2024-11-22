@@ -27,9 +27,24 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+    this.handleChange();
   }
-
+  
   closeMenu() {
     this.isMenuOpen = false;
+    this.handleChange();
+  }
+  
+  /**
+   * Prevents scrolling and clicking when the mobile menu is open
+   */
+  private handleChange() {
+    const body = document.body;
+    if (this.isMenuOpen) {
+      body.style.overflow = 'hidden';
+    }
+    else {
+      body.style.overflow = 'auto';
+    }
   }
 }

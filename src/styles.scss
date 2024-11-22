@@ -7,7 +7,7 @@ html {
 }
 
 /** Orange wings shown on each h2 element */
-h2:before, h2:after {
+.teste:before, .teste:after {
   content: "";
   width: 4rem;
   height: 2px;

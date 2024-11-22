@@ -15,7 +15,7 @@ interface Project {
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
-export class ProjectsComponent{
+export class ProjectsComponent {
   projects: Project[] = [];
 
   constructor() {
@@ -30,7 +30,7 @@ export class ProjectsComponent{
         'ASP.NET Core (C#)',
         'MS SQL Server',
         'Python',
-        'Machine Learning'
+        'Machine Learning',
       ],
     });
     this.projects.push({
@@ -46,7 +46,7 @@ export class ProjectsComponent{
       year: '2018',
       description:
         'The application uses a vector field to direct particles towards a target. The vectors are calculated using a heatmap, which centers on the position of the target. \nThe particles collide with the environment, which can be edited and saved/loaded using the GUI.',
-      image: 'black2.png',//'Particle Flow - Demonstration.png', //"black.png",
+      image: 'black2.png', //'Particle Flow - Demonstration.png', //"black.png",
       technologies: ['Java', 'Swing', 'IntelliJ'],
     });
     this.projects.push({
@@ -74,7 +74,7 @@ export class ProjectsComponent{
       title: 'Augmented Reality game (group project)',
       year: '2019',
       description:
-        'The game uses computer vision to track a red ball, which serves as the controller. I created a system for the rigging and animations for the player character and the opponents. The math for OpenGL has been handwritten.',
+        'The game uses computer vision to track a red ball, which serves as the controller. A system has been created for the rigging and animations for the player character and the opponents. The math for OpenGL is written by hand.',
       image: 'AR Game.png',
       technologies: ['C++', 'OpenCV', 'OpenGL', 'IrrKlang'],
     });

@@ -1,13 +1,12 @@
 <section id="projects" class="py-16 bg-gray-800 text-white">
   <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-semibold text-center mb-12 relative fade-in-left">Projects</h2>
+    <h2 class="text-4xl font-semibold text-center mb-12 fade-in-left winged-14">Projects</h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <div *ngFor="let project of projects"
-        class="bg-white/10 backface-hidden rounded-md overflow-hidden shadow-lg hover:scale-105 transition-all 
-        duration-300 group relative fade-in-up">
-
-        <!-- rounded-sm -->
+        class="backface-hidden rounded-md overflow-hidden shadow-lg hover:scale-105 transition-all 
+        duration-300 group relative fade-in-up bg-white/5 border-none ">
+        <!-- no backdrop-blur, that causes the text to go blurry -->
         <img src="{{project.image}}" alt="{{project.title}}" class="w-full h-56 object-cover">
         <div class="p-6">
           <div class="flex justify-between">
@@ -19,7 +18,6 @@
             <span *ngFor="let technology of project.technologies"
               class="bg-gray-800 text-white text-sm px-2 py-1 rounded-md">{{technology}}</span>
           </div>
-
         </div>
       </div>
     </div>
