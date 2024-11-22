@@ -59,7 +59,8 @@ export class SkillsComponent {
       'Bash',
       'Nginx',
       'Windows',
-      'PowerShell'
+      'PowerShell',
+      'Wireguard',
     );
     // this.other.skills.push("MS Office", "Machine Learning", "Computer Vision");
     this.categories.push(this.frontend, this.backend, this.devOps);

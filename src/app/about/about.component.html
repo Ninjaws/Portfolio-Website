@@ -1,10 +1,12 @@
 <section id="about" class="py-20 bg-white text-center">
   <div class="container mx-auto px-4">
+
     <div class="mb-6">
       <h2 class="text-3xl font-semibold italic text-gray-800 relative mb-1">Introducing, Ian Vink</h2>
       <p class="text-xl font-medium text-gray-500 text-center">
         Full-Stack Developer with a strong interest in efficiency and automation
       </p>
+
       <div class="flex justify-center md:items-center space-x-6 mt-6">
         <div *ngFor="let iconItem of iconItems" class="flex flex-col md:flex-row items-center text-gray-600">
           <i class="bi {{iconItem.icon}} text-2xl md:mr-2"></i>
@@ -12,17 +14,23 @@
         </div>
       </div>
     </div>
-    <!-- <br> -->
-    <!-- <br> -->
+
     <p class="text-xl text-gray-600 text-center">
-      <!-- Full-Stack Developer with a strong interest in efficiency and reproduceability<br> -->
       Here you'll find some of my projects, with a demo and the source code linked inside (unless there is a NDA)<br>
       Contact details can be found below. Cheers!
     </p>
+
+
     <!-- <pre class="text-xl text-gray-600 text-center text-wrap">
       Full-Stack Developer with a strong interest in efficiency and reproduceability
       Below you'll find some noteworthy projects, with a demo and the source code linked inside (unless there is a NDA)
       Contact details can be found below. Cheers!
     </pre> -->
+    <div class="flex justify-center mt-6">
+      <a href="path-to-your-cv.pdf" target="_blank" class=" border-2 border-black text-black font-semibold py-2 px-4 w-fit rounded-sm hover:bg-black hover:text-white 
+      hover:border-transparent flex items-center transition duration-300 ease-in-out">
+        Resume
+      </a>
+    </div>
   </div>
 </section>

@@ -17,14 +17,15 @@ export class AboutComponent {
   iconItems: IconItem[] = [];
 
   constructor() {
-    this.iconItems.push({icon: "bi-globe", text: "Dutch, English"});
+    //bi-chat bi-globe bi-translate
+    this.iconItems.push({icon: "bi-translate", text: "Dutch, English"});
     this.iconItems.push({icon: "bi-geo-alt-fill", text: "Limburg, The Netherlands"});
-    this.iconItems.push({icon: "bi-cake2-fill", text: "28 years old"});
+    this.iconItems.push({icon: "bi-cake2-fill", text: this.getAge() +" years old"});
     // this.iconItems.push({icon: "bi-file-person-fill", text: "View my CV"});
   }
 
   getAge(): number {
-    const birthdate: Date = new Date(1995, 11, 15);
+    const birthdate: Date = new Date(1995, 10, 15);
     const today = new Date();
     let age = today.getFullYear() - birthdate.getFullYear();
     const monthDifference = today.getMonth() - birthdate.getMonth();

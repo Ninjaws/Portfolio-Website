@@ -2,22 +2,38 @@
   <div class="container mx-auto px-4">
     <div class="flex justify-between items-center">
       <div class="text-2xl font-bold">Ian Vink</div>
+      <div class="flex items-center">
+        <nav class="hidden md:flex space-x-6">
+          <a *ngFor="let menuItem of menuItems" href="{{menuItem.href}}" class="hover:text-gray-400">{{menuItem.name}}</a>
+        </nav>
+  
+        <div class="md:hidden">
+          <button (click)="toggleMenu()" class="focus:outline-none">
+            <i class="bi bi-list text-3xl"></i>
+          </button>
+        </div>
 
-      <nav class="hidden md:flex space-x-6">
-        <a *ngFor="let menuItem of menuItems" href="{{menuItem.href}}" class="hover:text-gray-400">{{menuItem.name}}</a>
-      </nav>
+        <a href="path-to-your-cv.pdf" target="_blank"
+          class="ml-6 border-2 border-white text-white font-semibold py-2 px-4 rounded-sm hover:bg-white hover:text-black 
+          hover:border-transparent flex items-center transition duration-300 ease-in-out">
+          Resume
+        </a>
+      </div>
 
-      <div class="md:hidden">
+
+
+      <!-- <div class="md:hidden">
         <button (click)="toggleMenu()" class="text-white focus:outline-none">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
-      </div>
+      </div> -->
     </div>
 
     <div *ngIf="isMenuOpen" class="absolute top-full left-0 w-full bg-gray-800 text-white space-y-4 p-6 z-50">
-      <a *ngFor="let menuItem of menuItems" href="{{menuItem.href}}" class="block hover:text-gray-400" (click)="closeMenu()">{{menuItem.name}}</a>
+      <a *ngFor="let menuItem of menuItems" href="{{menuItem.href}}" class="block hover:text-gray-400"
+        (click)="closeMenu()">{{menuItem.name}}</a>
     </div>
   </div>
 </header>

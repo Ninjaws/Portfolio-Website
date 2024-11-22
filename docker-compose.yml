@@ -4,8 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
       target: production
-    image: website-frontend-prod
-    container_name: website-frontend-prod-cont
+    image: portfolio-website-prod
+    container_name: portfolio-website-prod-cont
     ports:
       - "4400:80"
     restart: always

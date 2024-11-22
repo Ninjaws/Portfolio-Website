@@ -24,12 +24,13 @@ export class ProjectsComponent{
       year: '2021',
       description:
         'An application that combines key-value detection and multiclass-classification, to identify the correct supplier for an invoice. It uses online machine learning to keep improving itself as the user provides feedback.',
-      image: 'Supplier Recognition - Demo.png',
+      image: 'Supplier Recognition - Demo2.png',
       technologies: [
         'Angular (Typescript, HTML, CSS)',
         'ASP.NET Core (C#)',
         'MS SQL Server',
         'Python',
+        'Machine Learning'
       ],
     });
     this.projects.push({
@@ -45,7 +46,7 @@ export class ProjectsComponent{
       year: '2018',
       description:
         'The application uses a vector field to direct particles towards a target. The vectors are calculated using a heatmap, which centers on the position of the target. \nThe particles collide with the environment, which can be edited and saved/loaded using the GUI.',
-      image: 'black.png',//'Particle Flow - Demonstration4.png', //"black.png",
+      image: 'black2.png',//'Particle Flow - Demonstration.png', //"black.png",
       technologies: ['Java', 'Swing', 'IntelliJ'],
     });
     this.projects.push({

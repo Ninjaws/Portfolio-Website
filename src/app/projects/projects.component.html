@@ -4,10 +4,11 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <div *ngFor="let project of projects"
-        class="bg-white/10 backface-hidden rounded-lg shadow-lg hover:scale-105 transition-all 
+        class="bg-white/10 backface-hidden rounded-md overflow-hidden shadow-lg hover:scale-105 transition-all 
         duration-300 group relative fade-in-up">
 
-        <img src="{{project.image}}" alt="{{project.title}}" class="w-full h-56 rounded-sm object-cover">
+        <!-- rounded-sm -->
+        <img src="{{project.image}}" alt="{{project.title}}" class="w-full h-56 object-cover">
         <div class="p-6">
           <div class="flex justify-between">
             <h3 class="text-2xl font-semibold text-teal-400 mb-4">{{project.title}}</h3>
