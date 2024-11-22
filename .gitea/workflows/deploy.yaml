@@ -1,0 +1,14 @@
+name: Portfolio App Deployment
+run-name: ${{ gitea.actor }} is deploying Portfolio App
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Portfolio Runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: docker compose up -d --build
