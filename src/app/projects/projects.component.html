@@ -6,15 +6,21 @@
       <div *ngFor="let project of projects"
         class="backface-hidden rounded-sm overflow-hidden shadow-lg md:hover:scale-105 transition-all 
         duration-300 group relative fade-in-up bg-white/5 border-none">
-        <!-- alt="{{project.title}}" -->
-        <!-- *ngIf="project.image"  -->
         <img src="{{project.image}}" alt="{{project.title}}" class="w-full max-h-56 aspect-[3/2] object-cover">
         <div class="p-2 xs:p-3 xl:px-6 min-h-56">
+          <!-- min-h-56 -->
           <div class="flex flex-wrap mb-2 xs:mb-4 items-center">
             <h3 class="text-xl sm:text-2xl font-semibold text-teal-400 flex-grow">{{project.title}}</h3>
             <p class="pl-2 ml-auto w-auto text-right text-sm xs:text-base text-gray-400">{{project.year}}</p>
           </div>
-          <p class="text-gray-300 mb-4 whitespace-pre-line">{{project.description}}</p>
+          <p class="text-gray-300 mb-4 whitespace-pre-line max-h-48 overflow-auto">{{project.description}}</p>
+
+          <!-- <details class="text-gray-300 mb-4">
+            <summary class="cursor-pointer list-none">
+            </summary>
+            <p class="whitespace-pre-line">{{project.description}}</p>
+          </details> -->
+
           <div class="flex flex-wrap gap-1">
             <span *ngFor="let technology of project.technologies"
               class="bg-gray-800 text-white text-sm sm:text-md px-1 sm:px-2 py-1 rounded-md">{{technology}}</span>
