@@ -5,28 +5,35 @@
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
       <div *ngFor="let project of projects"
         class="backface-hidden rounded-sm overflow-hidden shadow-lg md:hover:scale-105 transition-all 
-        duration-300 group relative fade-in-up bg-white/5 border-none">
+        duration-300 group relative fade-in-up bg-white/5 border-none flex flex-col">
         <img src="{{project.image}}" alt="{{project.title}}" class="w-full max-h-56 aspect-[3/2] object-cover">
-        <div class="p-2 xs:p-3 xl:px-6 min-h-56">
-          <!-- min-h-56 -->
+        <div class="p-2 xs:p-3 lg:px-6 lg:pb-6 flex-grow flex flex-col">
           <div class="flex flex-wrap mb-2 xs:mb-4 items-center">
             <h3 class="text-xl sm:text-2xl font-semibold text-teal-400 flex-grow">{{project.title}}</h3>
             <p class="pl-2 ml-auto w-auto text-right text-sm xs:text-base text-gray-400">{{project.year}}</p>
           </div>
-          <p class="text-gray-300 mb-4 whitespace-pre-line max-h-48 overflow-auto">{{project.description}}</p>
-
-          <!-- <details class="text-gray-300 mb-4">
-            <summary class="cursor-pointer list-none">
-            </summary>
-            <p class="whitespace-pre-line">{{project.description}}</p>
-          </details> -->
-
-          <div class="flex flex-wrap gap-1">
+          
+          <div class="flex flex-wrap gap-1 mb-4">
             <span *ngFor="let technology of project.technologies"
-              class="bg-gray-800 text-white text-sm sm:text-md px-1 sm:px-2 py-1 rounded-md">{{technology}}</span>
+            class="bg-gray-800/55 text-white text-sm sm:text-md px-1 sm:px-2 py-1 rounded-md">{{technology}}</span>
+          </div>
+          <p class="text-gray-300 mb-4 whitespace-pre-line ">{{project.description}}</p>         
+          
+          <div class="flex justify-end items-end gap-5 flex-1">
+              <a *ngFor="let link of project.links" href="{{link.address}}" target="_blank" class="text-gray-400 rounded-full hover:text-teal-400 transition-all 
+              duration-100 ease-in-out flex items-center gap-3" [ngClass]="link.type === 'link' ? 'border border-gray-600 p-1 rounded-sm hover:bg-teal-400 hover:text-gray-700 hover:border-transparent' : ''">
+                <p *ngIf="link.type === 'link'">Try now</p>
+                <i *ngIf="link.type === 'link'" class="bi-arrow-right-circle-fill text-xl"></i>
+                <i *ngIf="link.type !== 'link'" class="text-3xl md:text-4xl" [ngClass]="link.type === 'source' ? 'bi-github' : 'bi-youtube'"></i>
+              </a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+<!-- <details class="text-gray-300 mb-4">
+  <summary class="cursor-pointer list-none">
+  </summary>
+  <p class="whitespace-pre-line">{{project.description | slice:150}}</p>
+</details> -->

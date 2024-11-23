@@ -1,12 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component } from '@angular/core';
 
+// export enum Link { Source, Demo, Link }
+
 interface Project {
   title: string;
   year: string;
   description: string;
   image: string;
   technologies: string[];
+  links: {address: string, type: 'source' | 'demo' | 'link'}[];
+  // source?: string;
+  // demo?: string;
+  // link?: string;
 }
 
 @Component({
@@ -26,7 +32,7 @@ export class ProjectsComponent {
         '\n\nTo combat this, the app collects all available questions in its own database. ' +  
         'To ensure the data stays fresh, it repeats this process every night, by creating a backup table, and then swapping it with the active one once it is finished. ' +
         '\n\nDocker is used for the development and deployment. The app is self-hosted, the link can be found below.',
-      image: 'Quiz 3.jpeg',
+      image: 'Quiz 5.jpeg',
       technologies: [
         'Angular',
         // 'Sass',
@@ -37,6 +43,9 @@ export class ProjectsComponent {
         'Nginx',
         'Gitea Workflows'
       ],
+      links: [{type: 'source', address: 'https://github.com/Ninjaws/Quiz'}, {type: 'link', address: 'https://quiz.ianvink.nl'}]
+      // source: 'https://github.com/Ninjaws/Quiz',
+      // link: 'https://quiz.ianvink.nl'
     });
     this.projects.push({
       title: 'Mobile-first ERP solution',
@@ -55,7 +64,7 @@ export class ProjectsComponent {
 
         // 'A full-fledged ERP solution, with modules for declarations (such as Cost, Time, Travel, Sickleave and Holidays), HRM (Managing employees), Sales (Relations, Contacts, Leads, Deals, Aftersales), Projectmanagement, Administration (Permission management, User management), and many more. ' +
         // '\n\nThe entire application is multi-lingual, with a system developed to enable multiple people add translations without causes merge errors. Every component is crafted in such a way that it supports both big and small screens. The application is throuroughly tested, with unittests, integrationtests and end-to-end tests. Deployments happen in stages, to ensure bugs are caught before going live.',
-      image: 'Top Secret White.png',
+      image: 'classified2 cleaned.png',
       technologies: [
         'Angular',
         'Sass',
@@ -71,6 +80,7 @@ export class ProjectsComponent {
         'Scrum',
         'Kanban'
       ],
+      links: [],
     });
     this.projects.push({
       title: 'AI supplier identification',
@@ -85,6 +95,7 @@ export class ProjectsComponent {
         'Python',
         'Machine Learning',
       ],
+      links: [],
     });
     this.projects.push({
       title: 'Seabed modification tool',
@@ -93,28 +104,13 @@ export class ProjectsComponent {
         'A tool to edit the seabed mesh of a maritime simulator. The collisionmap is also updated, to allow ships to interact with this update terrain. \nThis tool allows instructors to rapidly create new terrain, for training shipcrews.',
       image: 'Seabed Modification.png',
       technologies: ['Unigine (C#)', 'AGX Dynamics (C++)', 'Qt Creator'],
-    });
-    this.projects.push({
-      title: 'Flow Field pathfinding algorithm',
-      year: '2018',
-      description:
-        'The application uses a vector field to direct particles towards a target. The vectors are calculated using a heatmap, which centers on the position of the target. \nThe particles collide with the environment, which can be edited and saved/loaded using the GUI.',
-      image: 'black2.png', //'Particle Flow - Demonstration.png', //"black.png",
-      technologies: ['Java', 'Swing', 'IntelliJ'],
-    });
-    this.projects.push({
-      title: 'Jelly Rescue',
-      year: '2015',
-      description:
-        'A platformer written in C++, with saving/loading, tile- and collisionmaps, enemy AI, collectibles and state management to switch between multiple screens (game, menu, victory, etc.)',
-      image: 'Jelly Game - demo.png',
-      technologies: ['C++', 'SFML2.0', 'Platformer', 'Visual Studio'],
+      links: [],
     });
     this.projects.push({
       title: 'Microcontroller Tetris',
       year: '2019',
       description:
-        'Tetris written in C, visualized on dot-matrix displays, with the score visible on a 7-segment display and a menu system visible on the ATMega128.',
+      'Tetris written in C, visualized on dot-matrix displays, with the score visible on a 7-segment display and a menu system visible on the ATMega128.',
       image: 'Setup 3.png',
       technologies: [
         'C',
@@ -123,22 +119,52 @@ export class ProjectsComponent {
         'Dot-matrix displays',
         'Group project',
       ],
+      links: [{type:'source', address: 'https://github.com/Ninjaws/Microcontrollers-Tetris'}, {type:'demo', address:'https://youtu.be/UnNgNyXE9ZY'}]
+      // source: 'https://github.com/Ninjaws/Microcontrollers-Tetris',
+      // demo: 'https://youtu.be/UnNgNyXE9ZY'
     });
     this.projects.push({
       title: 'Augmented Reality game',
       year: '2019',
       description:
-        'The game uses computer vision to track a red ball, which serves as the controller. A system has been created for the rigging and animations for the player character and the opponents. The math for OpenGL is written by hand.',
+      'The game uses computer vision to track a red ball, which serves as the controller. A system has been created for the rigging and animations for the player character and the opponents. The math for OpenGL is written by hand.',
       image: 'AR Game.png',
       technologies: ['C++', 'OpenCV', 'OpenGL', 'IrrKlang', 'Group project'],
+      links: [{type:'source', address:'https://github.com/Ninjaws/AR-Applicatie'}, {type:'demo', address: 'https://youtu.be/fHJQNnytocc'}]
+      // source: 'https://github.com/Ninjaws/AR-Applicatie',
+      // demo: 'https://youtu.be/fHJQNnytocc'
     });
     this.projects.push({
-      title: 'Your dream project here?',
-      year: '',
+      title: 'Flow Field pathfinding algorithm',
+      year: '2018',
       description:
-        '',
-      image: 'Empty.png',
-      technologies: [],
+        'The application uses a vector field to direct particles towards a target. The vectors are calculated using a heatmap, which centers on the position of the target. \nThe particles collide with the environment, which can be edited and saved/loaded using the GUI.',
+      image: 'black2.png', //'Particle Flow - Demonstration.png', //"black.png",
+      technologies: ['Java', 'Swing', 'IntelliJ'],
+      links: [{type:'source', address:'https://github.com/Ninjaws/2D-Computer-Graphics/tree/master/EindOpdracht/Pathfinding'}, {type:'demo', address: 'https://youtu.be/7rvWAWpkYus'}]
+      
+      // source: 'https://github.com/Ninjaws/2D-Computer-Graphics/tree/master/EindOpdracht/Pathfinding',
+      // demo: 'https://youtu.be/7rvWAWpkYus'
     });
+    this.projects.push({
+      title: 'Jelly Rescue',
+      year: '2015',
+      description:
+        'A platformer written in C++, with saving/loading, tile- and collisionmaps, enemy AI, collectibles and state management to switch between multiple screens (game, menu, victory, etc.)',
+      image: 'Jelly Game - demo.png',
+      technologies: ['C++', 'SFML2.0', 'Platformer', 'Visual Studio'],
+      links: [{type:'source', address:'https://github.com/Ninjaws/JellyGame'}, {type:'demo', address: 'https://youtu.be/jCUnqbxuySI'}]
+     
+      // source: 'https://github.com/Ninjaws/JellyGame',
+      // demo: 'https://youtu.be/jCUnqbxuySI'
+    });
+    // this.projects.push({
+    //   title: 'Your dream project here?',
+    //   year: '',
+    //   description:
+    //     '',
+    //   image: 'Empty.png',
+    //   technologies: [],
+    // });
   }
 }
