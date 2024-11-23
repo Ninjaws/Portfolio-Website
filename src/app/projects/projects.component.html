@@ -1,4 +1,39 @@
-<section id="projects" class="py-16 bg-gray-800 text-white">
+<section id="projects" class="py-16 bg-gray-800 text-white flex justify-center">
+  <div class="container mx-none px-2 md:px-4 lg:px-6">
+    <h2 class="text-4xl font-semibold text-center mb-12 fade-in-left winged-14">Projects</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">
+      <div *ngFor="let project of projects"
+        class="backface-hidden rounded-sm overflow-hidden shadow-lg hover:scale-105 transition-all 
+        duration-300 group relative fade-in-up bg-white/5 border-none ">
+        <!-- no backdrop-blur, that causes the text to go blurry as well -->
+        <img src="{{project.image}}" alt="{{project.title}}" class="w-full max-h-56 aspect-[3/2] object-cover">
+        <div class="p-2 xs:p-3 xl:px-6">
+          <div class="flex flex-wrap mb-2 xs:mb-4 items-center">
+            <!-- justify-center -->
+            <h3 class="text-xl sm:text-2xl font-semibold text-teal-400 flex-grow">{{project.title}}</h3>
+            <!-- font-semibold -->
+            <p class="pl-2 ml-auto w-auto text-right text-sm xs:text-base text-gray-400">{{project.year}}</p>
+          </div>
+          <p class="text-gray-300 mb-4 whitespace-pre-line">{{project.description}}</p>
+          <div class="flex flex-wrap gap-1">
+            <span *ngFor="let technology of project.technologies"
+              class="bg-gray-800 text-white text-sm sm:text-md px-1 sm:px-2 py-1 rounded-md">{{technology}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- <section id="projects" class="py-16 bg-gray-800 text-white">
   <div class="container mx-auto px-6">
     <h2 class="text-4xl font-semibold text-center mb-12 fade-in-left winged-14">Projects</h2>
 
@@ -6,7 +41,6 @@
       <div *ngFor="let project of projects"
         class="backface-hidden rounded-md overflow-hidden shadow-lg hover:scale-105 transition-all 
         duration-300 group relative fade-in-up bg-white/5 border-none ">
-        <!-- no backdrop-blur, that causes the text to go blurry -->
         <img src="{{project.image}}" alt="{{project.title}}" class="w-full h-56 object-cover">
         <div class="p-6">
           <div class="flex justify-between">
@@ -22,4 +56,4 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->

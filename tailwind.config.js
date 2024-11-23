@@ -13,35 +13,6 @@ const backfaceVisibility = plugin(function ({ addUtilities }) {
   });
 });
 
-// const winged = plugin(function({addUtilities}) {
-//   addUtilities({
-//     '.winged': {
-//       'position': 'relative',
-//       '&::before, &::after': {
-//         content: '""',
-//         width: '4rem',
-//         height: '2px',
-//         background: '#ea5f00',
-//         // color: 'white',
-//         // backgroundColor: 'white',
-//         position: 'absolute',
-//         top: '50%',
-//         left: 0,
-//         right: 0,
-//         margin: '0 auto',
-//         transform: 'translateY(-50%)'
-//       },
-//       '&::before': {
-//         // left: '-2.5rem'
-//       },
-//       '&::after': {
-//         // left: '2.5rem'
-//       }
-
-//     }
-//   })
-// });
-
 const winged = plugin(function({ addUtilities }) {
   const createWingedClass = (position) => {
     return {
@@ -76,7 +47,11 @@ const winged = plugin(function({ addUtilities }) {
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xs: '375px'
+      }
+    },
   },
   plugins: [winged, backfaceVisibility],
 };

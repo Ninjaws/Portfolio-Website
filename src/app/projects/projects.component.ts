@@ -20,7 +20,7 @@ export class ProjectsComponent {
 
   constructor() {
     this.projects.push({
-      title: 'Continuously learning Supplier-identification module',
+      title: 'AI supplier identification',
       year: '2021',
       description:
         'An application that combines key-value detection and multiclass-classification, to identify the correct supplier for an invoice. It uses online machine learning to keep improving itself as the user provides feedback.',
@@ -35,14 +35,14 @@ export class ProjectsComponent {
     });
     this.projects.push({
       title: 'Seabed modification tool',
-      year: '2019 - 2020',
+      year: '2019-2020',
       description:
         'A tool to edit the seabed mesh of a maritime simulator. The collisionmap is also updated, to allow ships to interact with this update terrain. \nThis tool allows instructors to rapidly create new terrain, for training shipcrews',
       image: 'Seabed Modification.png',
       technologies: ['Unigine (C#)', 'AGC Dynamics (C++)', 'Qt Creator'],
     });
     this.projects.push({
-      title: 'Goal-based vector field pathfinding algorithm',
+      title: 'Flow Field pathfinding algorithm',
       year: '2018',
       description:
         'The application uses a vector field to direct particles towards a target. The vectors are calculated using a heatmap, which centers on the position of the target. \nThe particles collide with the environment, which can be edited and saved/loaded using the GUI.',
@@ -58,7 +58,7 @@ export class ProjectsComponent {
       technologies: ['C++', 'SFML2.0', 'Platformer', 'Visual Studio'],
     });
     this.projects.push({
-      title: 'Microcontroller Tetris (group project)',
+      title: 'Microcontroller Tetris',
       year: '2019',
       description:
         'Tetris written in C, visualized on dot-matrix displays, with the score visible on a 7-segment display and a menu system visible on the ATMega128.',
@@ -68,15 +68,16 @@ export class ProjectsComponent {
         'ATmega128',
         '7-segment display',
         'Dot-matrix displays',
+        'Group project'
       ],
     });
     this.projects.push({
-      title: 'Augmented Reality game (group project)',
+      title: 'Augmented Reality game',
       year: '2019',
       description:
         'The game uses computer vision to track a red ball, which serves as the controller. A system has been created for the rigging and animations for the player character and the opponents. The math for OpenGL is written by hand.',
       image: 'AR Game.png',
-      technologies: ['C++', 'OpenCV', 'OpenGL', 'IrrKlang'],
+      technologies: ['C++', 'OpenCV', 'OpenGL', 'IrrKlang', 'Group project'],
     });
   }
 }
