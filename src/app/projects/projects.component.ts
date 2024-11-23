@@ -12,19 +12,72 @@ interface Project {
 @Component({
   selector: 'app-projects',
   imports: [CommonModule],
-  templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss',
+  templateUrl: './projects.component.html'
 })
 export class ProjectsComponent {
   projects: Project[] = [];
 
   constructor() {
     this.projects.push({
+      title: 'Quiz App',
+      year: '2024',
+      description:
+        'A little quiz game, using questions from the Open Trivia Database. This API only allows one request per 5 seconds. ' + 
+        '\n\nTo combat this, the app collects all available questions in its own database. ' +  
+        'To ensure the data stays fresh, it repeats this process every night, by creating a backup table, and then swapping it with the active one once it is finished. ' +
+        '\n\nDocker is used for the development and deployment. The app is self-hosted, the link can be found below.',
+      image: 'Quiz 3.jpeg',
+      technologies: [
+        'Angular',
+        // 'Sass',
+        'Tailwind',
+        'Spring Boot',
+        'Docker',
+        'Linux',
+        'Nginx',
+        'Gitea Workflows'
+      ],
+    });
+    this.projects.push({
+      title: 'Mobile-first ERP solution',
+      year: '2021-2024',
+      description:
+        `This is a comprehensive ERP solution that includes modules for a variety of functions, such as:
+
+          • Declarations (Cost, Time, Travel, Sick Leave, and Holidays)
+          • HRM (Employee Management, Contracts)
+          • Sales (Relations, Contacts, Leads, Deals, Aftersales)
+          • Project Management
+          • Administration (Permission and User Management)
+            …and much more.
+          \nThe entire application is multilingual, and each component is designed to be fully responsive, ensuring a smooth experience on both large and small screens.
+          \nThe application undergoes thorough testing, including unit tests, integration tests, and end-to-end tests. Deployments are rolled out in stages to catch potential bugs before going live.`,
+
+        // 'A full-fledged ERP solution, with modules for declarations (such as Cost, Time, Travel, Sickleave and Holidays), HRM (Managing employees), Sales (Relations, Contacts, Leads, Deals, Aftersales), Projectmanagement, Administration (Permission management, User management), and many more. ' +
+        // '\n\nThe entire application is multi-lingual, with a system developed to enable multiple people add translations without causes merge errors. Every component is crafted in such a way that it supports both big and small screens. The application is throuroughly tested, with unittests, integrationtests and end-to-end tests. Deployments happen in stages, to ensure bugs are caught before going live.',
+      image: 'Top Secret White.png',
+      technologies: [
+        'Angular',
+        'Sass',
+        'i18n',
+        'Playwright',
+        'Java EE',
+        'JUnit',
+        'PostgreSQL',
+        'Linux',
+        'Jenkins',
+        'Nginx',
+        'UML',
+        'Scrum',
+        'Kanban'
+      ],
+    });
+    this.projects.push({
       title: 'AI supplier identification',
       year: '2021',
       description:
         'An application that combines key-value detection and multiclass-classification, to identify the correct supplier for an invoice. It uses online machine learning to keep improving itself as the user provides feedback.',
-      image: 'Supplier Recognition - Demo2.png',
+      image: 'Supplier Recognition - Demo.png',
       technologies: [
         'Angular (Typescript, HTML, CSS)',
         'ASP.NET Core (C#)',
@@ -37,9 +90,9 @@ export class ProjectsComponent {
       title: 'Seabed modification tool',
       year: '2019-2020',
       description:
-        'A tool to edit the seabed mesh of a maritime simulator. The collisionmap is also updated, to allow ships to interact with this update terrain. \nThis tool allows instructors to rapidly create new terrain, for training shipcrews',
+        'A tool to edit the seabed mesh of a maritime simulator. The collisionmap is also updated, to allow ships to interact with this update terrain. \nThis tool allows instructors to rapidly create new terrain, for training shipcrews.',
       image: 'Seabed Modification.png',
-      technologies: ['Unigine (C#)', 'AGC Dynamics (C++)', 'Qt Creator'],
+      technologies: ['Unigine (C#)', 'AGX Dynamics (C++)', 'Qt Creator'],
     });
     this.projects.push({
       title: 'Flow Field pathfinding algorithm',
@@ -68,7 +121,7 @@ export class ProjectsComponent {
         'ATmega128',
         '7-segment display',
         'Dot-matrix displays',
-        'Group project'
+        'Group project',
       ],
     });
     this.projects.push({
@@ -78,6 +131,14 @@ export class ProjectsComponent {
         'The game uses computer vision to track a red ball, which serves as the controller. A system has been created for the rigging and animations for the player character and the opponents. The math for OpenGL is written by hand.',
       image: 'AR Game.png',
       technologies: ['C++', 'OpenCV', 'OpenGL', 'IrrKlang', 'Group project'],
+    });
+    this.projects.push({
+      title: 'Your dream project here?',
+      year: '',
+      description:
+        '',
+      image: 'Empty.png',
+      technologies: [],
     });
   }
 }

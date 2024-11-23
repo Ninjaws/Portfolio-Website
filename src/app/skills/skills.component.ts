@@ -10,8 +10,7 @@ interface Category {
   selector: 'app-skills',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './skills.component.html',
-  styleUrl: './skills.component.scss',
+  templateUrl: './skills.component.html'
 })
 export class SkillsComponent {
   frontend: Category = { title: 'Frontend', skills: [] };
