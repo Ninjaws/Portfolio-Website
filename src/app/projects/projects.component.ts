@@ -110,8 +110,6 @@ export class ProjectsComponent {
         'Group project',
       ],
       links: [{type:'source', address: 'https://github.com/Ninjaws/Microcontrollers-Tetris'}, {type:'demo', address:'https://youtu.be/UnNgNyXE9ZY'}]
-      // source: 'https://github.com/Ninjaws/Microcontrollers-Tetris',
-      // demo: 'https://youtu.be/UnNgNyXE9ZY'
     });
     this.projects.push({
       title: 'Augmented Reality Game',
@@ -121,8 +119,6 @@ export class ProjectsComponent {
       image: 'AR Game.png',
       technologies: ['C++', 'OpenCV', 'OpenGL', 'IrrKlang', 'Group project'],
       links: [{type:'source', address:'https://github.com/Ninjaws/AR-Applicatie'}, {type:'demo', address: 'https://youtu.be/fHJQNnytocc'}]
-      // source: 'https://github.com/Ninjaws/AR-Applicatie',
-      // demo: 'https://youtu.be/fHJQNnytocc'
     });
     this.projects.push({
       title: 'Flow Field Pathfinding Algorithm',
@@ -133,9 +129,6 @@ export class ProjectsComponent {
       image: 'black2.png', //'Particle Flow - Demonstration.png', //"black.png",
       technologies: ['Java', 'Swing', 'IntelliJ'],
       links: [{type:'source', address:'https://github.com/Ninjaws/2D-Computer-Graphics/tree/master/EindOpdracht/Pathfinding'}, {type:'demo', address: 'https://youtu.be/7rvWAWpkYus'}]
-      
-      // source: 'https://github.com/Ninjaws/2D-Computer-Graphics/tree/master/EindOpdracht/Pathfinding',
-      // demo: 'https://youtu.be/7rvWAWpkYus'
     });
     this.projects.push({
       title: 'Jelly Rescue',
@@ -145,9 +138,6 @@ export class ProjectsComponent {
       image: 'Jelly Game - demo.png',
       technologies: ['C++', 'SFML2.0', 'Platformer', 'Visual Studio'],
       links: [{type:'source', address:'https://github.com/Ninjaws/JellyGame'}, {type:'demo', address: 'https://youtu.be/jCUnqbxuySI'}]
-     
-      // source: 'https://github.com/Ninjaws/JellyGame',
-      // demo: 'https://youtu.be/jCUnqbxuySI'
     });
     // this.projects.push({
     //   title: 'Your dream project here?',
