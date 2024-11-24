@@ -1,23 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component } from '@angular/core';
+import { Project, ProjectCardComponent } from "../project-card/project-card.component";
 
-// export enum Link { Source, Demo, Link }
-
-interface Project {
-  title: string;
-  year: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  links: {address: string, type: 'source' | 'demo' | 'link'}[];
-  // source?: string;
-  // demo?: string;
-  // link?: string;
-}
 
 @Component({
   selector: 'app-projects',
-  imports: [CommonModule],
+  imports: [CommonModule, ProjectCardComponent],
   templateUrl: './projects.component.html'
 })
 export class ProjectsComponent {
@@ -48,7 +36,7 @@ export class ProjectsComponent {
       // link: 'https://quiz.ianvink.nl'
     });
     this.projects.push({
-      title: 'Mobile-first ERP solution',
+      title: 'Mobile-First ERP Solution',
       year: '2021-2024',
       description:
         `This is a comprehensive ERP solution that includes modules for a variety of functions, such as:
@@ -83,7 +71,7 @@ export class ProjectsComponent {
       links: [],
     });
     this.projects.push({
-      title: 'AI supplier identification',
+      title: 'AI Supplier Identification',
       year: '2021',
       description:
         'An application that combines key-value detection and multiclass-classification, to identify the correct supplier for an invoice. It uses online machine learning to keep improving itself as the user provides feedback.',
@@ -98,10 +86,12 @@ export class ProjectsComponent {
       links: [],
     });
     this.projects.push({
-      title: 'Seabed modification tool',
+      title: 'Seabed Modification Tool',
       year: '2019-2020',
       description:
-        'A tool to edit the seabed mesh of a maritime simulator. The collisionmap is also updated, to allow ships to interact with this update terrain. \nThis tool allows instructors to rapidly create new terrain, for training shipcrews.',
+        'A tool for editing the seabed mesh in a maritime simulator. The collision map is automatically updated, enabling ships to interact with the modified terrain.'+
+        '\n\nThis tool allows instructors to quickly create new environments for the training of ship crews.',
+        // to edit the seabed mesh of a maritime simulator. The collisionmap is also updated, to allow ships to interact with this update terrain. \nThis tool allows instructors to rapidly create new terrain, for training shipcrews.',
       image: 'Seabed Modification.png',
       technologies: ['Unigine (C#)', 'AGX Dynamics (C++)', 'Qt Creator'],
       links: [],
@@ -124,7 +114,7 @@ export class ProjectsComponent {
       // demo: 'https://youtu.be/UnNgNyXE9ZY'
     });
     this.projects.push({
-      title: 'Augmented Reality game',
+      title: 'Augmented Reality Game',
       year: '2019',
       description:
       'The game uses computer vision to track a red ball, which serves as the controller. A system has been created for the rigging and animations for the player character and the opponents. The math for OpenGL is written by hand.',
@@ -135,10 +125,11 @@ export class ProjectsComponent {
       // demo: 'https://youtu.be/fHJQNnytocc'
     });
     this.projects.push({
-      title: 'Flow Field pathfinding algorithm',
+      title: 'Flow Field Pathfinding Algorithm',
       year: '2018',
       description:
-        'The application uses a vector field to direct particles towards a target. The vectors are calculated using a heatmap, which centers on the position of the target. \nThe particles collide with the environment, which can be edited and saved/loaded using the GUI.',
+        'The application uses a vector field to direct particles towards a target. The vectors are calculated using a heatmap, which centers on the position of the target.'+ 
+        '\n\nThe particles collide with the environment, which can be edited and saved/loaded using the GUI.',
       image: 'black2.png', //'Particle Flow - Demonstration.png', //"black.png",
       technologies: ['Java', 'Swing', 'IntelliJ'],
       links: [{type:'source', address:'https://github.com/Ninjaws/2D-Computer-Graphics/tree/master/EindOpdracht/Pathfinding'}, {type:'demo', address: 'https://youtu.be/7rvWAWpkYus'}]
