@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  ViewChild,
+} from '@angular/core';
 
 export interface Project {
   title: string;
@@ -7,7 +14,7 @@ export interface Project {
   description: string;
   image: string;
   technologies: string[];
-  links: {address: string, type: 'source' | 'demo' | 'link'}[];
+  links: { address: string; type: 'source' | 'demo' | 'link' }[];
   // source?: string;
   // demo?: string;
   // link?: string;
@@ -18,31 +25,30 @@ export interface Project {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './project-card.component.html',
-  styles: ``
+  styles: ``,
 })
 export class ProjectCardComponent {
-
-  @Input() project!: Project; 
+  @Input() project!: Project;
 
   @ViewChild('description') descriptionElement!: ElementRef;
-  isExpanded = false;
   isTruncated = false;
-  isTextVisible = true;
-  fullHeight: string = '13rem';
-  
+  isExpanded = false;
+
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     this.checkIfTruncated();
-    this.cdr.detectChanges(); // Notify Angular of the changes after view initialization
   }
 
-  // Check if the description is being cut off
   checkIfTruncated() {
     const element = this.descriptionElement.nativeElement;
-    this.fullHeight = `${this.descriptionElement.nativeElement.scrollHeight}px`;
-    console.log(this.fullHeight);
+    // console.log(this.fullHeight);
     this.isTruncated = element.scrollHeight > element.offsetHeight;
+    // this.updateTextHeight();
+  }
+
+  getTextHeight() {
+    return `${this.descriptionElement.nativeElement.scrollHeight}px`;
   }
 
   // Toggle expand/collapse
@@ -50,15 +56,9 @@ export class ProjectCardComponent {
     this.isExpanded = !this.isExpanded;
     if (this.isExpanded) {
       this.isTruncated = false;
-      this.isTextVisible = false;
-      setTimeout(() => {
-        this.isTextVisible = true;
-      }, 500)
     } else {
       this.isTruncated = true;
     }
     this.cdr.detectChanges(); // Notify Angular of the changes after toggling
   }
-  
-
 }

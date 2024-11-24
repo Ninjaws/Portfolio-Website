@@ -13,33 +13,28 @@
             <span *ngFor="let technology of project.technologies"
                 class="bg-gray-800/55 text-white text-sm sm:text-md px-1 sm:px-2 py-1 rounded-md">{{technology}}</span>
         </div>
-        <!-- max-h-60 -->
-        <!-- <p class="text-gray-300 mb-4 whitespace-pre-line overflow-hidden overflow-ellipsis max-h-60">
-            {{project.description}}</p> -->
 
-            <!-- [class.mb-2]="isTruncated || isExpanded" -->
-        <div class="relative mb-2">
-            <!-- [class.mb-2]="project.links.length === 0"> -->
+        <div class="relative mb-2"
+            [class.mb-4]="project.links.length === 0"
+        >
             <!-- [class.max-h-[textHeight]="isExpanded" [class.max-h-52]="!isExpanded" -->
             <p #description
                 class="text-gray-300 mb-4 overflow-hidden xl:whitespace-pre-line transition-all duration-500 ease-in-out"
-                [ngStyle]="{ maxHeight: isExpanded ? fullHeight : '13rem' }"
+                [ngStyle]="{ maxHeight: isExpanded ? getTextHeight(): '13rem' }"
                 [class.whitespace-pre-line]="isTruncated || isExpanded">
                 {{ project.description }}
             </p>
-
             <button *ngIf="isTruncated && !isExpanded" (click)="toggleExpand()"
                 class="text-teal-600 hover:text-teal-400">
                 Show More
             </button>
-            <button *ngIf="isExpanded" (click)="toggleExpand()" class="text-teal-500 hover:text-teal-200">
+            <button *ngIf="isExpanded" (click)="toggleExpand()" class="text-teal-600 hover:text-teal-400">
                 Show Less
             </button>
         </div>
 
         <div class="flex justify-end items-end gap-5 flex-1">
             <a *ngFor="let link of project.links" href="{{link.address}}" target="_blank" class="">
-                <!-- [ngClass]="link.type === 'link' ? 'border-2 border-gray-600 p-1 rounded-sm hover:bg-teal-400 hover:text-gray-700 hover:border-transparent' : ''"> -->
                 <p *ngIf="link.type === 'link'"
                     class="text-base md:text-lg flex text-center items-center border-2 text-gray-400 border-gray-600 p-1 rounded-sm hover:bg-teal-400 hover:text-gray-700 hover:border-transparent transition-all duration-300 ease-in-out">
                     Try it here!
