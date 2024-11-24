@@ -16,6 +16,7 @@ export class ProjectsComponent {
       title: 'Quiz App',
       year: '2024',
       description:
+        // 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' +
         'A little quiz game, using questions from the Open Trivia Database. This API only allows one request per 5 seconds. ' + 
         '\n\nTo combat this, the app collects all available questions in its own database. ' +  
         'To ensure the data stays fresh, it repeats this process every night, by creating a backup table, and then swapping it with the active one once it is finished. ' +

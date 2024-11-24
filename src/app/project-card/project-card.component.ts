@@ -27,6 +27,8 @@ export class ProjectCardComponent {
   @ViewChild('description') descriptionElement!: ElementRef;
   isExpanded = false;
   isTruncated = false;
+  isTextVisible = true;
+  fullHeight: string = '13rem';
   
   constructor(private cdr: ChangeDetectorRef) {}
 
@@ -38,8 +40,9 @@ export class ProjectCardComponent {
   // Check if the description is being cut off
   checkIfTruncated() {
     const element = this.descriptionElement.nativeElement;
+    this.fullHeight = `${this.descriptionElement.nativeElement.scrollHeight}px`;
+    console.log(this.fullHeight);
     this.isTruncated = element.scrollHeight > element.offsetHeight;
-    console.log(this.isTruncated);
   }
 
   // Toggle expand/collapse
@@ -47,6 +50,10 @@ export class ProjectCardComponent {
     this.isExpanded = !this.isExpanded;
     if (this.isExpanded) {
       this.isTruncated = false;
+      this.isTextVisible = false;
+      setTimeout(() => {
+        this.isTextVisible = true;
+      }, 500)
     } else {
       this.isTruncated = true;
     }

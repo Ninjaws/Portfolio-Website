@@ -17,63 +17,37 @@
         <!-- <p class="text-gray-300 mb-4 whitespace-pre-line overflow-hidden overflow-ellipsis max-h-60">
             {{project.description}}</p> -->
 
-            <!-- <div class="relative">
-                <p #description
-                   class="text-gray-300 mb-4 whitespace-pre-line overflow-hidden overflow-ellipsis overflow- max-h-52"
-                   [class.max-h-none]="isExpanded">
-                   {{ project.description }}
-                </p>
-              
-                <button *ngIf="isTruncated && !isExpanded"
-                        (click)="toggleExpand()"
-                        class="text-blue-500 mt-2">
-                  Show More
-                </button>
-              
-                <button *ngIf="isExpanded"
-                        (click)="toggleExpand()"
-                        class="text-blue-500 mt-2">
-                  Show Less
-                </button>
-              </div>    -->
+            <!-- [class.mb-2]="isTruncated || isExpanded" -->
+        <div class="relative mb-2">
+            <!-- [class.mb-2]="project.links.length === 0"> -->
+            <!-- [class.max-h-[textHeight]="isExpanded" [class.max-h-52]="!isExpanded" -->
+            <p #description
+                class="text-gray-300 mb-4 overflow-hidden xl:whitespace-pre-line transition-all duration-500 ease-in-out"
+                [ngStyle]="{ maxHeight: isExpanded ? fullHeight : '13rem' }"
+                [class.whitespace-pre-line]="isTruncated || isExpanded">
+                {{ project.description }}
+            </p>
 
-              <div class="relative"
-              [class.mb-2]="isTruncated || isExpanded">
-                <!-- max-h-40 -->
-                <p #description
-                
-                   class="text-gray-300 mb-4 xl:whitespace-pre-line overflow-hidden transition-all duration-300 ease-in-out"
-                   [class.max-h-none]="isExpanded"
-                   [class.max-h-52]="!isExpanded"
-                   [class.whitespace-pre-line]="isTruncated || isExpanded"
-                   [class.overflow-visible]="isExpanded"
-                   [class.overflow-hidden]="!isExpanded"
-                   >
-                  {{ project.description }}
-                </p>
-              
-                <!-- Faded area at the bottom of the text -->
-                <!-- <div *ngIf="isTruncated" class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-gray-700 opacity-100 cursor-pointer" (click)="toggleExpand()"></div> -->
-              
-                <!-- Show More Button (Optional) -->
-                <button *ngIf="isTruncated && !isExpanded"
-                        (click)="toggleExpand()"
-                        class="text-teal-600 hover:text-teal-400">
-                  Show More
-                </button>
-                <button *ngIf="isExpanded" (click)="toggleExpand()" class="text-teal-500 hover:text-teal-200">
-                  Show Less
-                </button>
-              </div>
+            <button *ngIf="isTruncated && !isExpanded" (click)="toggleExpand()"
+                class="text-teal-600 hover:text-teal-400">
+                Show More
+            </button>
+            <button *ngIf="isExpanded" (click)="toggleExpand()" class="text-teal-500 hover:text-teal-200">
+                Show Less
+            </button>
+        </div>
 
         <div class="flex justify-end items-end gap-5 flex-1">
             <a *ngFor="let link of project.links" href="{{link.address}}" target="_blank" class="">
                 <!-- [ngClass]="link.type === 'link' ? 'border-2 border-gray-600 p-1 rounded-sm hover:bg-teal-400 hover:text-gray-700 hover:border-transparent' : ''"> -->
-                <p *ngIf="link.type === 'link'" class="text-base md:text-lg flex text-center items-center border-2 text-gray-400 border-gray-600 p-1 rounded-sm hover:bg-teal-400 hover:text-gray-700 hover:border-transparent transition-all duration-300 ease-in-out">
+                <p *ngIf="link.type === 'link'"
+                    class="text-base md:text-lg flex text-center items-center border-2 text-gray-400 border-gray-600 p-1 rounded-sm hover:bg-teal-400 hover:text-gray-700 hover:border-transparent transition-all duration-300 ease-in-out">
                     Try it here!
                     <i class="bi-arrow-right-circle-fill text-base md:text-lg ml-2 "></i>
                 </p>
-                <i *ngIf="link.type !== 'link'" class="text-3xl md:text-4xl text-gray-400 rounded-full hover:text-teal-400 transition-all duration-300 ease-in-out" [ngClass]="link.type === 'source' ? 'bi-github' : 'bi-youtube'"></i>
+                <i *ngIf="link.type !== 'link'"
+                    class="text-3xl md:text-4xl text-gray-400 rounded-full hover:text-teal-400 transition-all duration-300 ease-in-out"
+                    [ngClass]="link.type === 'source' ? 'bi-github' : 'bi-youtube'"></i>
             </a>
         </div>
     </div>
