@@ -1,5 +1,4 @@
 import { AfterViewInit, Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';

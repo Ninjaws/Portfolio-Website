@@ -3,7 +3,6 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
-  HostListener,
   Input,
   ViewChild,
 } from '@angular/core';
@@ -15,9 +14,6 @@ export interface Project {
   image: string;
   technologies: string[];
   links: { address: string; type: 'source' | 'demo' | 'link' }[];
-  // source?: string;
-  // demo?: string;
-  // link?: string;
 }
 
 @Component({
@@ -38,20 +34,18 @@ export class ProjectCardComponent {
 
   ngAfterViewInit() {
     this.checkIfTruncated();
+    this.cdr.detectChanges();
   }
 
   checkIfTruncated() {
     const element = this.descriptionElement.nativeElement;
-    // console.log(this.fullHeight);
     this.isTruncated = element.scrollHeight > element.offsetHeight;
-    // this.updateTextHeight();
   }
 
   getTextHeight() {
     return `${this.descriptionElement.nativeElement.scrollHeight}px`;
   }
 
-  // Toggle expand/collapse
   toggleExpand() {
     this.isExpanded = !this.isExpanded;
     if (this.isExpanded) {
@@ -59,6 +53,6 @@ export class ProjectCardComponent {
     } else {
       this.isTruncated = true;
     }
-    this.cdr.detectChanges(); // Notify Angular of the changes after toggling
+    this.cdr.detectChanges();
   }
 }

@@ -16,7 +16,6 @@ export class SkillsComponent {
   frontend: Category = { title: 'Frontend', skills: [] };
   backend: Category = { title: 'Backend', skills: [] };
   devOps: Category = { title: 'DevOps', skills: [] };
-  // other: Category = {title: "Other", skills: []};
 
   categories: Category[] = [];
 
@@ -61,7 +60,6 @@ export class SkillsComponent {
       'PowerShell',
       'Wireguard',
     );
-    // this.other.skills.push("MS Office", "Machine Learning", "Computer Vision");
     this.categories.push(this.frontend, this.backend, this.devOps);
   }
 }

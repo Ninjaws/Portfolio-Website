@@ -16,15 +16,13 @@ export class ProjectsComponent {
       title: 'Quiz App',
       year: '2024',
       description:
-        // 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' +
         'A little quiz game, using questions from the Open Trivia Database. This API only allows one request per 5 seconds. ' + 
         '\n\nTo combat this, the app collects all available questions in its own database. ' +  
         'To ensure the data stays fresh, it repeats this process every night, by creating a backup table, and then swapping it with the active one once it is finished. ' +
         '\n\nDocker is used for the development and deployment. The app is self-hosted, the link can be found below.',
-      image: 'Quiz 5.jpeg',
+      image: 'Quiz.jpeg',
       technologies: [
         'Angular',
-        // 'Sass',
         'Tailwind',
         'Spring Boot',
         'Docker',
@@ -33,8 +31,6 @@ export class ProjectsComponent {
         'Gitea Workflows'
       ],
       links: [{type: 'source', address: 'https://github.com/Ninjaws/Quiz'}, {type: 'link', address: 'https://quiz.ianvink.nl'}]
-      // source: 'https://github.com/Ninjaws/Quiz',
-      // link: 'https://quiz.ianvink.nl'
     });
     this.projects.push({
       title: 'Mobile-First ERP Solution',
@@ -50,10 +46,7 @@ export class ProjectsComponent {
             …and much more.
           \nThe entire application is multilingual, and each component is designed to be fully responsive, ensuring a smooth experience on both large and small screens.
           \nThe application undergoes thorough testing, including unit tests, integration tests, and end-to-end tests. Deployments are rolled out in stages to catch potential bugs before going live.`,
-
-        // 'A full-fledged ERP solution, with modules for declarations (such as Cost, Time, Travel, Sickleave and Holidays), HRM (Managing employees), Sales (Relations, Contacts, Leads, Deals, Aftersales), Projectmanagement, Administration (Permission management, User management), and many more. ' +
-        // '\n\nThe entire application is multi-lingual, with a system developed to enable multiple people add translations without causes merge errors. Every component is crafted in such a way that it supports both big and small screens. The application is throuroughly tested, with unittests, integrationtests and end-to-end tests. Deployments happen in stages, to ensure bugs are caught before going live.',
-      image: 'classified2 cleaned.png',
+      image: 'Classified.png',
       technologies: [
         'Angular',
         'Sass',
@@ -76,7 +69,7 @@ export class ProjectsComponent {
       year: '2021',
       description:
         'An application that combines key-value detection and multiclass-classification, to identify the correct supplier for an invoice. It uses online machine learning to keep improving itself as the user provides feedback.',
-      image: 'Supplier Recognition - Demo.png',
+      image: 'Supplier Recognition.png',
       technologies: [
         'Angular (Typescript, HTML, CSS)',
         'ASP.NET Core (C#)',
@@ -92,7 +85,6 @@ export class ProjectsComponent {
       description:
         'A tool for editing the seabed mesh in a maritime simulator. The collision map is automatically updated, enabling ships to interact with the modified terrain.'+
         '\n\nThis tool allows instructors to quickly create new environments for the training of ship crews.',
-        // to edit the seabed mesh of a maritime simulator. The collisionmap is also updated, to allow ships to interact with this update terrain. \nThis tool allows instructors to rapidly create new terrain, for training shipcrews.',
       image: 'Seabed Modification.png',
       technologies: ['Unigine (C#)', 'AGX Dynamics (C++)', 'Qt Creator'],
       links: [],
@@ -102,7 +94,7 @@ export class ProjectsComponent {
       year: '2019',
       description:
       'Tetris written in C, visualized on dot-matrix displays, with the score visible on a 7-segment display and a menu system visible on the ATMega128.',
-      image: 'Setup 3.png',
+      image: 'Microcontroller Tetris.png',
       technologies: [
         'C',
         'ATmega128',
@@ -127,7 +119,7 @@ export class ProjectsComponent {
       description:
         'The application uses a vector field to direct particles towards a target. The vectors are calculated using a heatmap, which centers on the position of the target.'+ 
         '\n\nThe particles collide with the environment, which can be edited and saved/loaded using the GUI.',
-      image: 'black2.png', //'Particle Flow - Demonstration.png', //"black.png",
+      image: 'Flow Field Pathfinding Algorithm.png',
       technologies: ['Java', 'Swing', 'IntelliJ'],
       links: [{type:'source', address:'https://github.com/Ninjaws/2D-Computer-Graphics/tree/master/EindOpdracht/Pathfinding'}, {type:'demo', address: 'https://youtu.be/7rvWAWpkYus'}]
     });
@@ -136,7 +128,7 @@ export class ProjectsComponent {
       year: '2015',
       description:
         'A platformer written in C++, with saving/loading, tile- and collisionmaps, enemy AI, collectibles and state management to switch between multiple screens (game, menu, victory, etc.)',
-      image: 'Jelly Game - demo.png',
+      image: 'Jelly Game.png',
       technologies: ['C++', 'SFML2.0', 'Platformer', 'Visual Studio'],
       links: [{type:'source', address:'https://github.com/Ninjaws/JellyGame'}, {type:'demo', address: 'https://youtu.be/jCUnqbxuySI'}]
     });

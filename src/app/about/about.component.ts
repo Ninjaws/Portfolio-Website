@@ -16,11 +16,9 @@ export class AboutComponent {
   iconItems: IconItem[] = [];
 
   constructor() {
-    //bi-chat bi-globe bi-translate
     this.iconItems.push({icon: "bi-translate", text: "Dutch, English"});
     this.iconItems.push({icon: "bi-geo-alt-fill", text: "Limburg, The Netherlands"});
     this.iconItems.push({icon: "bi-cake2-fill", text: this.getAge() +" years old"});
-    // this.iconItems.push({icon: "bi-file-person-fill", text: "View my CV"});
   }
 
   getAge(): number {
