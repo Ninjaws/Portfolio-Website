@@ -37,13 +37,14 @@
                 </button>
               </div>    -->
 
-              <div class="relative">
+              <div class="relative"
+              [class.mb-2]="isTruncated || isExpanded">
                 <!-- max-h-40 -->
                 <p #description
                 
-                   class="text-gray-300 mb-4 lg:whitespace-pre-line overflow-hidden transition-all duration-300 ease-in-out"
+                   class="text-gray-300 mb-4 xl:whitespace-pre-line overflow-hidden transition-all duration-300 ease-in-out"
                    [class.max-h-none]="isExpanded"
-                   [class.max-h-40]="!isExpanded"
+                   [class.max-h-52]="!isExpanded"
                    [class.whitespace-pre-line]="isTruncated || isExpanded"
                    [class.overflow-visible]="isExpanded"
                    [class.overflow-hidden]="!isExpanded"
@@ -57,10 +58,10 @@
                 <!-- Show More Button (Optional) -->
                 <button *ngIf="isTruncated && !isExpanded"
                         (click)="toggleExpand()"
-                        class="text-teal-600 mt-1 hover:text-teal-400">
+                        class="text-teal-600 hover:text-teal-400">
                   Show More
                 </button>
-                <button *ngIf="isExpanded" (click)="toggleExpand()" class="text-teal-500 mt-2 hover:text-teal-200">
+                <button *ngIf="isExpanded" (click)="toggleExpand()" class="text-teal-500 hover:text-teal-200">
                   Show Less
                 </button>
               </div>
