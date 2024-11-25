@@ -23,7 +23,7 @@ export class AppComponent implements AfterViewInit {
       },
       {
         name:'keywords',
-        content: 'portfolio, developer, web development, software development, software engineering, Full-Stack Development, Angular, Java, C++ Docker, projects, skills, resume'
+        content: 'portfolio, developer, web development, software development, software engineering, Full-Stack Development, Angular, Java, C++, Docker, projects, skills, resume'
       },
       {
         name:'author',
