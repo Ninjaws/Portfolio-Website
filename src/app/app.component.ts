@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,23 @@ import { SkillsComponent } from './skills/skills.component';
 })
 export class AppComponent implements AfterViewInit {
   title = 'portfolio';
+
+  constructor(private meta: Meta) {
+    this.meta.addTags([
+      {
+        name:'description',
+        content: 'Portfolio of Ian Vink, Full-Stack Developer'
+      },
+      {
+        name:'keywords',
+        content: 'portfolio, developer, web development, software development, software engineering, Full-Stack Development, Angular, Java, C++ Docker, projects, skills, resume'
+      },
+      {
+        name:'author',
+        content: 'Ian Vink'
+      }
+    ])
+  }
 
 
   ngAfterViewInit(): void {
