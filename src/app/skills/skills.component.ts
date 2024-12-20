@@ -30,9 +30,9 @@ export class SkillsComponent {
       'RxJS',
       'i18n',
       'Playwright',
+      'WebAssembly (C++)'
     );
     // 'WebGL/WebGPU',
-    // 'WebAssembly (Rust/C++)'
     this.backend.skills.push(
       'Java',
       'Spring Boot',
@@ -40,6 +40,7 @@ export class SkillsComponent {
       'C#',
       'ASP.NET Core',
       'NestJS',
+      'GraphQL',
       'Python',
       'Machine Learning',
       'Flask/FastAPI',
@@ -51,6 +52,7 @@ export class SkillsComponent {
       'Docker',
       'CI/CD',
       'Jenkins',
+      'Ansible',
       'Git',
       'GitHub/GitLab',
       'Linux',

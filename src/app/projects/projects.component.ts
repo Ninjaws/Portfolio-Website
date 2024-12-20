@@ -17,9 +17,8 @@ export class ProjectsComponent {
       year: '2024',
       description:
         'A little quiz game, using questions from the Open Trivia Database. This API only allows one request per 5 seconds. ' + 
-        '\n\nTo combat this, the app collects all available questions in its own database. ' +  
-        'To ensure the data stays fresh, it repeats this process every night, by creating a backup table, and then swapping it with the active one once it is finished. ' +
-        '\n\nDocker is used for the development and deployment. The app is self-hosted, the link can be found below.',
+        '\n\nTo combat this, the app collects the questions in its own database. ' +  
+        'To ensure the data stays fresh, it repeats this process regularly, by creating a backup table, and then swapping it with the active one once it is finished.',
       image: 'Quiz.jpeg',
       technologies: [
         'Angular',
@@ -127,10 +126,11 @@ export class ProjectsComponent {
       title: 'Jelly Rescue',
       year: '2015',
       description:
-        'A platformer written in C++, with saving/loading, tile- and collisionmaps, enemy AI, collectibles and state management to switch between multiple screens (game, menu, victory, etc.)',
+        'A platformer written in C++, with saving/loading, tile- and collisionmaps, enemy AI, collectibles and state management to switch between multiple screens (game, menu, victory, etc.)'+
+        '\n\nRewritten in 2024 using WebAssembly (Emscripten) and raylib, to make it playable in the browser!',
       image: 'Jelly Game.png',
-      technologies: ['C++', 'SFML2.0', 'Platformer', 'Visual Studio'],
-      links: [{type:'source', address:'https://github.com/Ninjaws/JellyGame'}, {type:'demo', address: 'https://youtu.be/jCUnqbxuySI'}]
+      technologies: ['C++', 'WebAssembly', 'SFML2.0', 'Platformer', 'Visual Studio', 'Docker'],
+      links: [{type:'source', address:'https://github.com/Ninjaws/WebJelly-Rescue'}, {type:'demo', address: 'https://youtu.be/jCUnqbxuySI'}, {type:'link', address: 'https://jelly.ianvink.nl'}]
     });
     // this.projects.push({
     //   title: 'Your dream project here?',
